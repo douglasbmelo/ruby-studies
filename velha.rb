@@ -38,7 +38,26 @@ class Velha
       "x"
     elsif primeira_linha.all?('o') || segunda_linha.all?('o') || terceira_linha.all?('o')
       "o"
-    end    
+    end 
+    
+    primeira_coluna = positions.values_at[0, 3, 6]
+    segunda_coluna = positions.values_at[1, 4, 7]
+    terceira_coluna = positions.values_at[2, 5, 8]
+
+    if primeira_coluna.all?('x') || segunda_coluna.all?('x') || terceira_coluna.all?('x')
+      "x"
+    elsif primeira_coluna.all?('o') || segunda_coluna.all?('o') || terceira_coluna.all?('o')
+      "o"
+    end 
+
+    primeira_diagonal = positions.values_at[0, 4, 8]
+    segunda_diagonal = positions.values_at[2, 4, 6]
+    
+    if primeira_diagonal.all?('x') || segunda_diagonal.all?('x')
+      "x"
+    elsif primeira_diagonal.all?('o') || segunda_diagonal.all?('o')
+      "o"
+    end
   end
 end
 
