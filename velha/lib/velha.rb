@@ -24,11 +24,10 @@ class Velha
       winner = row_winner(positions) || column_winner(positions) || diagonal_winner(positions)
       if winner != nil 
         puts "O jogador #{winner} ganhou!"
-        break
-      elsif
-        puts "Velha"  
+        return   
       end  
     end
+    puts "Velha"
   end
 
   private
@@ -70,9 +69,6 @@ class Velha
     end
   end
 end
-
-@jogo = Velha.new
-
 
 
 #iniciar arquivo no irb usar '' string
